@@ -3,14 +3,14 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
-  m<-null
-  set<- function(y){
-    x <<- y
-    m <<- NULL
+makeCacheMatrix <- function(x = matrix()) {## define the argument with default mode of "matrix"
+  m<-null  ## initialize inv as NULL; will hold value of matrix inverse 
+  set<- function(y){## define the set function to assign new 
+    x <<- y ## value of matrix in parent environment
+    m <<- NULL  ## if there is a new matrix, reset inv to NULL
   }
-  get <- function() x
-  setmatrix <- function(solve) m <<- solve
+  get <- function() x  ## define the get fucntion - returns value of the matrix argument
+  setmatrix <- function(solve) m <<- solve  
   getmatrix <- function() m
   list(set = set, get = get,
        setmatrix = setmatrix,
